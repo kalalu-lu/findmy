@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# 记忆库是本机隐私数据，绝不要提交
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+
+# 模型权重体积大，不入库
+*.pt
+*.onnx
+*.bin
+models/
+
+# 本地个人配置
+config/cameras.local.json
+.env
+.DS_Store
