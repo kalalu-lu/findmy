@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "findmy"
+version = "0.1.0"
+description = "Local offline voice assistant that remembers where you put things at home"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "findmy contributors" }]
+keywords = ["voice-assistant", "object-location", "offline", "smart-home", "whisper", "yolo-world"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Home Automation",
+]
+# 核心功能零依赖：打字模拟语音 + 模拟摄像头即可跑通全流程
+dependencies = []
+
+[project.optional-dependencies]
+# 真实麦克风 + 本地语音合成
+voice = [
+    "faster-whisper>=1.1.0",
+    "sounddevice>=0.4.6",
+    "pyttsx3>=2.90",
+    "piper-tts>=1.3.0",
+]
+# 真实摄像头 + 开放词汇检测
+vision = [
+    "ultralytics>=8.3.0",
+    "opencv-python>=4.9.0",
+    "numpy>=1.26",
+]
+dev = ["build>=1.2.0"]
+
+[project.scripts]
+findmy = "findmy.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["findmy*"]
+
+# 注意：config/*.json 是运行时配置，不在 wheel 里。
+# 请用可编辑安装 `pip install -e .`，并在仓库根目录运行程序，
+# 这样 cli.py 才能从 ./config 读到 settings.json / cameras.json / aliases.json。

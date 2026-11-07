@@ -1,0 +1,31 @@
+{
+  "_source": "照搬 happy-capybara-man/FindForYou/backend/camera_config.json 的结构：name / location / enabled；新增 source（OpenCV 设备号或 RTSP 地址）",
+  "cameras": {
+    "0": {
+      "name": "客厅摄像头",
+      "location": "客厅电视柜",
+      "enabled": true,
+      "source": 0
+    },
+    "1": {
+      "name": "卧室摄像头",
+      "location": "卧室床头柜",
+      "enabled": true,
+      "source": 1
+    },
+    "2": {
+      "name": "玄关摄像头",
+      "location": "玄关鞋柜",
+      "enabled": true,
+      "source": "rtsp://admin:password@192.168.1.50/stream1"
+    }
+  },
+  "default_camera": 0,
+  "_mock_note": "vision.mock=true 时不会真的开摄像头，而是从这里读取模拟检测结果，方便先跑通流程",
+  "mock_detections": {
+    "钥匙": {"camera_id": "0", "confidence": 0.87, "region": "left"},
+    "眼镜": {"camera_id": "1", "confidence": 0.79, "region": "center"},
+    "遥控器": {"camera_id": "0", "confidence": 0.91, "region": "right"},
+    "手机": {"camera_id": "2", "confidence": 0.83, "region": "left"}
+  }
+}

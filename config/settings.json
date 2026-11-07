@@ -1,0 +1,29 @@
+{
+  "stt": {
+    "engine": "faster-whisper",
+    "model": "small",
+    "language": "zh",
+    "device": "cpu",
+    "compute_type": "int8",
+    "record_seconds": 5,
+    "sample_rate": 16000
+  },
+  "tts": {
+    "engine": "auto",
+    "piper_model": "",
+    "fallback": "pyttsx3"
+  },
+  "vision": {
+    "model": "yolov8s-worldv2.pt",
+    "conf_threshold": 0.25,
+    "frames_per_camera": 3,
+    "mock": true
+  },
+  "memory": {
+    "db_path": "data/memory.db"
+  },
+  "behavior": {
+    "_note": "摄像头找到物品后只播报位置，不写回记忆库；记忆只由用户主动口述写入",
+    "ask_before_camera_search": true
+  }
+}

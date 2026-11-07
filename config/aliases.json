@@ -1,0 +1,29 @@
+{
+  "_source": "prompts 结构照搬 happy-capybara-man/FindForYou/backend/custom_classes.json 的 classes[].id + classes[].prompts 多提示词映射，中文物品名 -> YOLO-World 英文提示词",
+  "aliases": {
+    "钥匙串": "钥匙",
+    "车钥匙": "钥匙",
+    "门钥匙": "钥匙",
+    "锁匙": "钥匙",
+    "手机": "手机",
+    "电话": "手机",
+    "移动电话": "手机",
+    "遥控": "遥控器",
+    "电视遥控器": "遥控器",
+    "皮夹": "钱包",
+    "钱夹": "钱包",
+    "老花镜": "眼镜"
+  },
+  "prompts": {
+    "钥匙": ["keys", "a bunch of keys", "key", "钥匙"],
+    "手机": ["cell phone", "mobile phone", "phone", "手机"],
+    "钱包": ["wallet", "purse", "钱包"],
+    "遥控器": ["remote control", "TV remote", "遥控器"],
+    "眼镜": ["glasses", "eyeglasses", "spectacles", "眼镜"],
+    "杯子": ["cup", "mug", "杯子"],
+    "耳机": ["headphones", "earbuds", "耳机"],
+    "书": ["book", "书"],
+    "雨伞": ["umbrella", "雨伞"],
+    "充电器": ["phone charger", "charging cable", "充电器"]
+  }
+}
